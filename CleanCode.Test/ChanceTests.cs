@@ -17,5 +17,6 @@ public class ChanceTests
         Assert.That(new Chance(0.5).And(new Chance(0.5)), Is.EqualTo(new Chance(0.25)));
         Assert.That(new Chance(0.3).And(new Chance(0.5)), Is.EqualTo(new Chance(0.15)));
         Assert.That(new Chance(0.4).And(new Chance(0.4)), Is.EqualTo(new Chance(0.16)));
+        Assert.That(new Chance(0.4).And(new Chance(0.4).And(new Chance(0.4))), Is.EqualTo(new Chance(0.064)));
     }
 }
