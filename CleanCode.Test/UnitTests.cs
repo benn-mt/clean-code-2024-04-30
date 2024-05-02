@@ -14,8 +14,15 @@ public class UnitTests
     [Test]
     public void UnitsCanBeIncompatible(){
         var unit1 = new Unit();
+        Assert.That(unit1.IsCompatibleWith(unit1), Is.True);
         var unit2 = new Unit();
         Assert.That(unit1.IsCompatibleWith(unit2), Is.False);
         Assert.That(unit2.IsCompatibleWith(unit1), Is.False);
+        var subUnit1 = new Unit(1, unit1);
+        Assert.That(subUnit1.IsCompatibleWith(unit1), Is.True);
+        Assert.That(unit1.IsCompatibleWith(subUnit1), Is.True);
+        var subUnit2 = new Unit(1, subUnit1);
+        Assert.That(subUnit2.IsCompatibleWith(unit1), Is.True);
+        Assert.That(unit1.IsCompatibleWith(subUnit2), Is.True);
     }
 }
