@@ -5,12 +5,12 @@ public class QuantityTests
     [Test]
     public void CanBeComparedForEquality()
     {
-        Assert.AreEqual(new Quantity(1, VolumeUnit.TEASPOON), new Quantity(1, VolumeUnit.TEASPOON));
+        Assert.That(new Quantity(1, VolumeUnit.TEASPOON), Is.EqualTo(new Quantity(1, VolumeUnit.TEASPOON)));
         Assert.AreNotEqual(new Quantity(1, VolumeUnit.TEASPOON), new Quantity(2, VolumeUnit.TEASPOON));
         Assert.AreNotEqual(new Quantity(1, VolumeUnit.TEASPOON), new object());
         Assert.AreNotEqual(new Quantity(1, VolumeUnit.TEASPOON), null);
         Assert.AreNotEqual(new Quantity(2, VolumeUnit.TEASPOON), new Quantity(1, VolumeUnit.TEASPOON));
-        Assert.AreEqual(new Quantity(1, VolumeUnit.TABLESPOON), new Quantity(1, VolumeUnit.TABLESPOON));
+        Assert.That(new Quantity(1, VolumeUnit.TABLESPOON), Is.EqualTo(new Quantity(1, VolumeUnit.TABLESPOON)));
         Assert.AreNotEqual(new Quantity(1, VolumeUnit.TEASPOON), new Quantity(1, VolumeUnit.TABLESPOON));
         Assert.AreNotEqual(new Quantity(1, VolumeUnit.TABLESPOON), new Quantity(1, VolumeUnit.TEASPOON));
         Assert.AreNotEqual(new Quantity(1, VolumeUnit.TEASPOON), new Quantity(1, LengthUnit.INCH));
