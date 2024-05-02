@@ -12,5 +12,6 @@ public class LengthTests{
     [Test]
     public void CanBeAddedTogether(){
         Assert.That(Lengths.INCH.S(3).Add(Lengths.INCH.S(9)), Is.EqualTo(Lengths.FOOT.S(1)));
+        Assert.That(Lengths.FOOT.S(3).Add(Lengths.YARD.S(2)), Is.EqualTo(Lengths.INCH.S(108)));
     }
 }

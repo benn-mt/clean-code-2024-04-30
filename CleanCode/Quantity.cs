@@ -12,6 +12,9 @@ public class Quantity
 
     public Quantity Add(Quantity other)
     {
+        if (!this._unit.IsCompatibleWith(other._unit)){
+            throw new ArgumentException("Units are incompatible for addition");
+        }
         return new Quantity(_amount + _unit.AmountInThisUnit(other._amount, other._unit), this._unit);
     }
 
