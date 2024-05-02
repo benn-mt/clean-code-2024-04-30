@@ -25,4 +25,14 @@ public class UnitTests
         Assert.That(subUnit2.IsCompatibleWith(unit1), Is.True);
         Assert.That(unit1.IsCompatibleWith(subUnit2), Is.True);
     }
+
+    [Test]
+    public void CalculateAmountsInOtherUnitsWithOffsets()
+    {
+        var smallUnit = new Unit();
+        var mediumUnit = new Unit(5.0/9.0, smallUnit, 32);
+        Assert.That(smallUnit.AmountInThisUnit(32, mediumUnit), Is.EqualTo(0));
+        Assert.That(smallUnit.AmountInThisUnit(212, mediumUnit), Is.EqualTo(100));
+        Assert.That(mediumUnit.AmountInThisUnit(0, smallUnit), Is.EqualTo(32));
+    }
 }
