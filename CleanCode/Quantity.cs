@@ -1,3 +1,4 @@
+
 public class Quantity
 {
     private double _amount;
@@ -7,6 +8,11 @@ public class Quantity
     {
         _amount = amount;
         _unit = unit;
+    }
+
+    public Quantity Add(Quantity other)
+    {
+        return new Quantity(_amount + _unit.AmountInThisUnit(other._amount, other._unit), this._unit);
     }
 
     public bool Equals(Quantity other){
