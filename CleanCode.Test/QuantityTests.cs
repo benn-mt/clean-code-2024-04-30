@@ -13,5 +13,6 @@ public class QuantityTests
         Assert.AreEqual(new Quantity(1, Volumes.TABLESPOON), new Quantity(1, Volumes.TABLESPOON));
         Assert.AreNotEqual(new Quantity(1, Volumes.TEASPOON), new Quantity(1, Volumes.TABLESPOON));
         Assert.AreNotEqual(new Quantity(1, Volumes.TABLESPOON), new Quantity(1, Volumes.TEASPOON));
+        Assert.AreNotEqual(new Quantity(1, Volumes.TEASPOON), new Quantity(1, Lengths.INCH));
     }
 }

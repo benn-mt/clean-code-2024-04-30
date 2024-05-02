@@ -1,4 +1,5 @@
 
+
 public class Unit{
 
     private readonly double _ratioToBaseUnit;
@@ -19,6 +20,11 @@ public class Unit{
     public double AmountInThisUnit(double otherAmount, Unit otherUnit)
     {
         return otherAmount * otherUnit._ratioToBaseUnit / this._ratioToBaseUnit;
+    }
+
+    public bool IsCompatibleWith(Unit other)
+    {
+        return this._baseUnit == other._baseUnit;
     }
 
     public Quantity S(double amount){

@@ -10,7 +10,8 @@ public class Quantity
     }
 
     public bool Equals(Quantity other){
-        return _amount == _unit.AmountInThisUnit(other._amount, other._unit);
+        return _unit.IsCompatibleWith(other._unit) &&
+               _amount == _unit.AmountInThisUnit(other._amount, other._unit);
     }
 
     public override bool Equals(object? obj)
